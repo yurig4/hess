@@ -1,0 +1,230 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap');
+
+body {
+    padding-top: 20px;
+    background-color: #f0f2f5; /* Fundo ligeiramente diferente */
+    font-family: 'Roboto', sans-serif; /* Fonte padrão mais moderna */
+    color: #333;
+}
+
+.container {
+    max-width: 980px; /* Levemente mais largo */
+    background-color: #ffffff;
+    padding: 35px; /* Aumenta padding */
+    border-radius: 10px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+}
+
+h1, h2, h3 {
+    color: #2c3e50; /* Tom de azul/cinza escuro */
+}
+
+h3 {
+    border-bottom: 1px solid #eee; /* Linha sutil abaixo dos títulos de seção */
+    padding-bottom: 8px;
+}
+
+.reaction-card {
+    border: 1px solid #e0e0e0; /* Borda mais suave */
+    border-radius: 6px; /* Bordas consistentes */
+    background-color: #fff;
+    transition: box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease; /* Transições suaves */
+    margin-bottom: 1rem; /* Espaçamento padrão entre cards */
+    overflow: hidden; /* Garante que elementos filhos não ultrapassem bordas arredondadas */
+}
+
+.reaction-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ao passar o mouse */
+}
+
+/* Card Reação Alvo */
+.reaction-target {
+    background-color: #eef2f7; /* Fundo azul claro sutil */
+    border-left: 5px solid #5dade2; /* Azul mais suave */
+}
+
+/* Card Reação Intermediária (Nova Classe) */
+.reaction-intermediate {
+    background-color: #fdfdfd; /* Quase branco, mas diferente do container */
+    border-left: 5px solid #bdc3c7; /* Cinza claro */
+}
+
+/* Estilos para reação combinada (Correto/Incorreto) */
+.reaction-combined-base {
+    border-left-width: 5px;
+    border-left-style: solid;
+    min-height: 80px;
+    font-weight: bold;
+    /* Transições já definidas em .reaction-card */
+}
+.reaction-combined-correct {
+    background-color: #e8f5e9; /* Verde mais claro */
+    border-left-color: #66bb6a; /* Verde mais suave */
+}
+.reaction-combined-incorrect {
+    background-color: #ffebee; /* Vermelho mais claro */
+    border-left-color: #ef5350; /* Vermelho mais suave */
+}
+
+/* Fórmula da Reação */
+.reaction-formula {
+    font-family: 'Source Code Pro', monospace; /* Fonte monoespaçada para fórmulas */
+    font-size: 1.1rem;
+    margin-bottom: 8px; /* Espaçamento ajustado */
+    word-wrap: break-word;
+    display: flex; /* Tenta alinhar itens */
+    align-items: center; /* Alinha verticalmente */
+    gap: 0.5em; /* Espaço entre reagentes, seta, produtos */
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+}
+.reaction-side { flex-shrink: 1; } /* Permite que lados encolham */
+.reaction-arrow { color: #555; font-weight: bold; }
+
+/* Destaque para Coeficientes (Nova Classe) */
+.coeff-highlight {
+    font-weight: 700; /* Negrito */
+    color: #3498db; /* Cor azul para destaque */
+    margin-right: 2px; /* Pequeno espaço após o coeficiente */
+}
+.coeff-highlight.fraction { /* Estilo específico para fração */
+    color: #e67e22; /* Laranja para frações */
+    font-size: 1.1em; /* Levemente maior */
+}
+
+.delta-h {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    color: #7f8c8d; /* Cinza mais neutro */
+    font-size: 1rem;
+    text-align: right; /* Alinha Delta H à direita */
+    margin-top: 5px;
+}
+.reaction-target .delta-h,
+.reaction-combined-base .delta-h {
+    color: #2c3e50; /* Cor mais escura para Delta H alvo/combinado */
+}
+
+
+/* Controles das Reações Intermediárias */
+.reaction-controls-area {
+    background-color: #f8f9fa; /* Fundo cinza claro para área de controle */
+    padding: 10px;
+    border-radius: 0 0 6px 6px; /* Arredonda cantos inferiores */
+    border-top: 1px solid #e0e0e0; /* Linha separadora sutil */
+}
+.controls .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Espaçamento entre botões/grupos */
+    justify-content: flex-start;
+    align-items: center;
+}
+.controls .multiplier-controls {
+    display: flex;
+    align-items: center;
+}
+.controls .input-group {
+    width: auto;
+    flex-grow: 0;
+}
+.controls .btn-multiplier {
+    padding: 0.375rem 0.6rem; /* Ajuste padding */
+    line-height: 1;
+}
+.controls .btn i { /* Ícones nos botões */
+    margin-right: 5px;
+}
+
+.feedback { /* Estado da Manipulação */
+    font-size: 0.85em;
+    color: #6c757d;
+    width: 100%;
+    margin-top: 8px; /* Espaço acima do feedback */
+    text-align: right;
+}
+
+/* Input Number */
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    text-align: center;
+    border-color: #ced4da;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Área de Feedback do Problema */
+#problem-feedback {
+    min-height: 58px;
+}
+#problem-feedback .alert { /* Melhora visual do feedback */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Resumo da Resolução */
+.summary-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9rem;
+}
+.summary-line {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+}
+.summary-line:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.summary-reaction { flex-basis: 65%; word-wrap: break-word; }
+.summary-delta-h { flex-basis: 15%; text-align: right; font-weight: bold; color: #7f8c8d;}
+.summary-manipulation { flex-basis: 20%; text-align: right; color: #6c757d; font-size: 0.9em; padding-left: 10px; }
+.summary-target {
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.summary-target .summary-delta-h { color: #2c3e50; }
+
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+    .container { padding: 20px; }
+    .reaction-formula { font-size: 1rem; display: block; /* Muda para bloco em telas menores */ }
+    .reaction-arrow { display: block; text-align: center; margin: 5px 0; }
+    .delta-h { text-align: left; margin-top: 10px; }
+    .reaction-card .row { margin-left: 0; margin-right: 0; }
+    .reaction-card .row > div[class^="col-"] { padding-left: 5px; padding-right: 5px; width: 100%; text-align: center; }
+    .controls .btn-group { justify-content: center; }
+    .controls { margin-top: 15px; }
+    .feedback { text-align: center; }
+    .summary-reaction { flex-basis: 100%; margin-bottom: 5px; }
+    .summary-delta-h, .summary-manipulation { flex-basis: 50%; text-align: left; padding-left: 0;}
+    .summary-manipulation { text-align: right; }
+}
+
+@media (max-width: 576px) {
+    body { padding-top: 10px; }
+    .container { padding: 15px; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.1rem; }
+    .reaction-formula { font-size: 0.9rem; }
+    .controls .btn-group { flex-direction: column; align-items: stretch; gap: 5px; }
+    .controls .btn-group .btn, .controls .multiplier-controls { width: 100%; justify-content: center; }
+    .controls .input-group input { max-width: 80px !important; flex-grow: 1; }
+    .d-flex.gap-2 { flex-direction: column; } /* Empilha botões principais */
+}
