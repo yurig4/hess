@@ -47,7 +47,7 @@ const problems = [
             description: "Formação de NO",
             targetReaction: { reactants: { 'N2(g)': 1, 'O2(g)': 1 }, products: { 'NO(g)': 2 }, deltaH: 180.5 },
             steps: [
-                { id: 'p5_s1', original: { reactants: { 'N2(g)': 1, 'O2(g)': 1 }, products: { '2 NO(g)': 1 }, deltaH: 180.5 } } // Pequena adaptação de notação
+                { id: 'p5_s1', original: { reactants: { 'N2(g)': 1, 'O2(g)': 1 }, products: { 'NO(g)': 2 }, deltaH: 180.5 } } // Pequena adaptação de notação
             ]
         },
     
