@@ -72,11 +72,11 @@ h3 {
     font-family: 'Source Code Pro', monospace; /* Fonte monoespaçada para fórmulas */
     font-size: 1.1rem;
     margin-bottom: 8px; /* Espaçamento ajustado */
-    word-wrap: break-word;
+    /*word-wrap: break-word;
     display: flex; /* Tenta alinhar itens */
     align-items: center; /* Alinha verticalmente */
     gap: 0.5em; /* Espaço entre reagentes, seta, produtos */
-    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    /*flex-wrap: wrap; /* Permite quebrar linha em telas menores */
 }
 .reaction-side { flex-shrink: 1; } /* Permite que lados encolham */
 .reaction-arrow { color: #555; font-weight: bold; }
@@ -203,8 +203,8 @@ input[type=number]::-webkit-outer-spin-button {
 /* Ajustes Responsivos */
 @media (max-width: 768px) {
     .container { padding: 20px; }
-    .reaction-formula { font-size: 1rem; display: block; /* Muda para bloco em telas menores */ }
-    .reaction-arrow { display: block; text-align: center; margin: 5px 0; }
+    .reaction-formula { font-size: 1rem; /*display: block; /* Muda para bloco em telas menores */ }
+    .reaction-arrow { /*display: block;*/ text-align: center; margin: 5px 0; }
     .delta-h { text-align: left; margin-top: 10px; }
     .reaction-card .row { margin-left: 0; margin-right: 0; }
     .reaction-card .row > div[class^="col-"] { padding-left: 5px; padding-right: 5px; width: 100%; text-align: center; }
