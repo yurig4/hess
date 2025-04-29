@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container my-4"> {/* Adicionado my-4 para margem vertical geral */}
+    <div class="container my-4"> 
         <h1 class="text-center mb-2">Exercício Interativo: Lei de Hess</h1>
         <h2 class="text-center text-primary mb-4" id="problem-title">Carregando...</h2>
 
@@ -21,7 +21,7 @@
              Manipule as reações intermediárias (invertendo, multiplicando) até que a soma delas resulte na "Reação Alvo". Verifique se a <strong>Reação Combinada Atual</strong> está igual à <strong>Reação Alvo</strong>. Então, clique em "Verificar Resposta".
         </div>
 
-        <section class="mb-4"> {/* Usando section para melhor semântica */}
+        <section class="mb-4"> 
             <h3 class="mb-3">Reação Alvo</h3>
             <div id="target-reaction" class="reaction-card reaction-target p-3"></div>
         </section>
@@ -29,21 +29,21 @@
         <section class="mb-4">
             <h3 class="mb-3">Reações Intermediárias</h3>
             <div id="step-reactions">
-                {/* Cards serão inseridos aqui pelo JS */}
+               
             </div>
         </section>
 
         <section class="mb-4">
             <h3 class="mb-3">Reação Combinada Atual</h3>
-            {/* Classe base movida aqui para simplificar JS */}
+            
             <div id="combined-reaction" class="reaction-card reaction-combined-base p-3">
-                {/* Conteúdo inserido pelo JS */}
+        
             </div>
         </section>
 
         <div id="problem-feedback" class="mb-3"></div>
 
-        <div class="d-flex justify-content-center gap-2 flex-wrap"> {/* Adicionado flex-wrap */}
+        <div class="d-flex justify-content-center gap-2 flex-wrap"> 
              <button id="check-button" class="btn btn-success"><i class="fas fa-check me-1"></i> Verificar Resposta</button>
              <button id="next-problem-button" class="btn btn-info"><i class="fas fa-forward me-1"></i> Próximo Problema</button>
              <button id="reset-problem-button" class="btn btn-warning"><i class="fas fa-sync-alt me-1"></i> Resetar Problema Atual</button>
